@@ -160,7 +160,15 @@ for (let i=0 ; i<allDestination.length; i++)
   h.textContent = allDestination[i];
   let p = document.createElement('p');
   divcont.appendChild(p);
-  p.textContent=`Your are booking ${persons} tickets for a ${activity} trip to ${renderAct} . Breakfast including : ${breakfast}. Tour guide including ${tguide}.    Price = ${totalprice}`;
+  console.log(breakfast);
+  console.log(tguide);
+  let text1='';
+  let text2='';
+  if(breakfast===true){text1='Breakfast Included'}
+  else{text1=''}
+  if (tguide ='true'){text2=' and with a Certified guided Tour'}
+  else{text2=''}
+  p.textContent=`Your are booking ${persons} tickets for a ${activity} trip to ${renderAct} ,${text1} ${text2}.    Price = ${totalprice}`;
   let now = document.createElement('button');
   now.setAttribute('id','book');
   divcont.appendChild(now);
